@@ -1,34 +1,29 @@
-"use client"
+"use client";
+import { useEffect } from "react";
 import { useCart } from "../store/cartStore";
-import { useEffect, useState } from 'react';
-import CartListItem from "@/components/CartList";
-import Nav from "@/components/Navbar";
-
-// state itu data yang bdisimpan di komponen dan bisa berubah
-// props itu data yang dikirim dari parent ke child 
+import Navbar from "../components/Navbar";
+import ProductCard from "../components/ProductCard";
 
 export default function Page() {
   const setProducts = useCart((s) => s.setProducts);
+  const products = useCart((s) => s.products);
 
-
-  // 1) Ambil data produk dari API 
   useEffect(() => {
     (async () => {
-      const res = await fetch("https://fakestoreapi.com/products/", {
-        cache: "no-store",
-      });
+      const res = await fetch("https://fakestoreapi.com/products", { cache: "no-store" });
       const data = await res.json();
       setProducts(data);
     })();
   }, [setProducts]);
 
   return (
-   <div className="min-h-screen bg-fuchsia-400">
-       {/* Navbar & CartList sekarang baca langsung dari store */}
-      <Nav />
-      <main className="mx-auto max-w-5xl px-4 py-6">
-        <h2 className="mb-4 text-lg font-bold">Cart (Zustand)</h2>
-        <CartListItem />
+    <div className="min-h-screen">
+      <Navbar />
+      <main className="mx-auto max-w-6xl px-4 py-8">
+        {/* <h2 className="mb-4 text-2xl font-bold text-slate-900">Fresh Picks</h2> */}
+        <section className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
+          {products.map((p) => <ProductCard key={p.id} product={p} />)}
+        </section>
       </main>
     </div>
   );
