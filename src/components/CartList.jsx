@@ -1,21 +1,21 @@
 "use client";
+import { useCart } from "../store/cartStore";
 import CartItem from "./CartItem";
 
-//menerima props dari parent
-export default function CartListItem({ products, cart, onQtyChange }) {
+export default function CartListItem() {
+  const products = useCart((s) => s.products);
+
   if (!products?.length) {
     return <p className="text-sm text-gray-500">No products.</p>;
   }
-  
-//nge-loop products
+
+
   return (
     <div className="grid gap-3">
-      {products.map((p) => (
+      {products.map((p) => (//nge-loop products
         <CartItem
           key={p.id}
           product={p}
-          qty={cart[p.id] ?? 0}
-          onQtyChange={onQtyChange}
         />
       ))}
     </div>
