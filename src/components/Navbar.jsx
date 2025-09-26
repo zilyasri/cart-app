@@ -12,7 +12,6 @@ export default function Navbar() {
     <nav className="sticky top-0 z-20 border-b bg-white/70 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
-          <Leaf className="h-5 w-5 text-emerald-600" />
           Zaalalaa<span className="text-emerald-600">App</span>
         </Link>
 
