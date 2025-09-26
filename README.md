@@ -1,4 +1,4 @@
-# 🛒 FreshCart — Modern Cart App (Next.js)
+# 🛒 Cart App (Next.js)
 
 Cart sederhana yang modern dan responsif. Halaman awal menampilkan grid produk; ikon keranjang di navbar membawa ke halaman **Cart** berbentuk tabel ringkas. Proyek ini tersedia dalam dua pendekatan state:
 
@@ -18,7 +18,7 @@ Cart sederhana yang modern dan responsif. Halaman awal menampilkan grid produk; 
   <em>Halaman Cart (tabel ringkas tanpa tombol checkout)</em>
 </p>
 
-> **Catatan:** jika folder `public/preview` belum ada, buat lalu simpan screenshot sebagai `home.png` dan `cart.png`. Atau hapus bagian gambar di atas.
+
 
 ---
 
@@ -35,13 +35,12 @@ Cart sederhana yang modern dan responsif. Halaman awal menampilkan grid produk; 
 
 ## 🧩 Stack
 
-- **Next.js 15** (App Router)
+- **Next.js 15** 
 - **Tailwind CSS 3**
 - **shadcn/ui** (Button, Card, Table, Input, Separator, Badge)
-- **Zustand** (untuk branch `zustand` & `ui-shadcn`)
+- **Zustand** 
 - **FakeStore API** – `https://fakestoreapi.com/products`
 
 ---
 
-## 🗂️ Struktur Penting
 
