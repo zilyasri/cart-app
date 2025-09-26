@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 FreshCart — Modern Cart App (Next.js)
 
-## Getting Started
+Cart sederhana yang modern dan responsif. Halaman awal menampilkan grid produk; ikon keranjang di navbar membawa ke halaman **Cart** berbentuk tabel ringkas. Proyek ini tersedia dalam dua pendekatan state:
 
-First, run the development server:
+- **`main`** → _Props Drilling_ (state di page, data diprop-kan ke child)
+- **`zustand`** → _Global Store_ dengan **Zustand**
+- **`ui-shadcn`** → versi Zustand + styling **shadcn/ui** + hover states
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+  <img src="public/preview/home.png" alt="Home — Product Grid" width="85%">
+  <br/>
+  <em>Halaman Home (produk grid dengan tombol Add)</em>
+  <br/><br/>
+  <img src="public/preview/cart.png" alt="Cart — Table Summary" width="85%">
+  <br/>
+  <em>Halaman Cart (tabel ringkas tanpa tombol checkout)</em>
+</p>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+> **Catatan:** jika folder `public/preview` belum ada, buat lalu simpan screenshot sebagai `home.png` dan `cart.png`. Atau hapus bagian gambar di atas.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Fitur
 
-To learn more about Next.js, take a look at the following resources:
+- Grid kartu produk dengan tombol **Add** (+ hover lift & zoom)
+- Navbar dengan badge jumlah item & total harga _real-time_
+- Halaman **/cart** berupa **tabel** (image, name, price, qty, subtotal, remove)
+- Responsif (mobile → desktop)
+- Aksesibilitas: fokus-ring, tombol & input ramah keyboard
+- Desain modern: palet emerald/pastel, komponen **shadcn/ui**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧩 Stack
 
-## Deploy on Vercel
+- **Next.js 15** (App Router)
+- **Tailwind CSS 3**
+- **shadcn/ui** (Button, Card, Table, Input, Separator, Badge)
+- **Zustand** (untuk branch `zustand` & `ui-shadcn`)
+- **FakeStore API** – `https://fakestoreapi.com/products`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🗂️ Struktur Penting
+
