@@ -1,7 +1,11 @@
 "use client";
+import { useCart } from "../store/cartStore";  // 👈 wajib
 import Counter from "./Counter";
 
-export default function CartItem({ product, qty, onQtyChange }) {
+export default function CartItem({ product }) {
+   const qty = useCart((s) => s.cart[product.id] || 0);
+  const setQty = useCart((s) => s.setQty);
+
   const subtotal = product.price * qty;
 
   return (
@@ -18,7 +22,8 @@ export default function CartItem({ product, qty, onQtyChange }) {
           Subtotal: <span className="font-semibold">${subtotal.toFixed(2)}</span>
         </p>
       </div>
-      <Counter value={qty} onChange={(n) => onQtyChange(product.id, n)} />
+      {/* /* //ganti onqtychage ke setqty */ }
+      <Counter value={qty} onChange={(n) => setQty(product.id, n)} />
     </div>
   );
 }

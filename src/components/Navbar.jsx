@@ -1,6 +1,10 @@
 "use client";
+import { useCart } from "../store/cartStore";
 
-export default function Nav({ totalItems, totalPrice }) {
+
+export default function Nav({}) {
+  const totalItems = useCart((s) => s.totalItems());
+  const totalPrice = useCart((s) => s.totalPrice());
   return (
     <nav className="sticky top-0 z-10 bg-black border-b px-4 py-3">
       <div className="mx-auto max-w-5xl flex items-center justify-between">
